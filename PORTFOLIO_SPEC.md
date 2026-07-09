@@ -3,7 +3,7 @@
 # Informações relevantes
 - Linkedin Stanley: https://www.linkedin.com/in/stanley-brenner-dev/ (pode ser usado pra pegar as referências de carreira)
 - Github: https://github.com/StaanB (pode ser usado pra pegar os projetos e os links desses projetos para a Vercel)
-- Currículo (PDF do LinkedIn) em `reference/curriculo-do-linkedin.pdf` — conteúdo já extraído na seção 4.1
+- Currículo (PDF do LinkedIn) — conteúdo já extraído na seção 4.1. **O arquivo PDF foi removido do disco, do repositório e do histórico do git** porque continha o telefone pessoal do Stanley, que não faz parte do conteúdo do site.
 
 ## 1. Visão geral
 
@@ -357,7 +357,7 @@ Decidido: o site terá os dois idiomas, com toggle manual (🌐 PT ↔ EN) — m
 | 1. Conteúdo | Você fornece bio, projetos, skills, experiência, contato |
 | 2. Wireframe | ✅ Feito — substituído por um **protótipo interativo** (não mais telas estáticas cinza) em `wireframes/00-prototipo-interativo.html`, sincronizado no projeto "Portfólio Stanley Brenner" no Claude Design |
 | 3. Design system | Paleta e logo ✅ prontos (seção 5); tipografia com 3 opções geradas, aguardando escolha (5.1) |
-| 4. Setup do projeto | Next.js + Tailwind + deploy inicial na Vercel |
+| 4. Setup do projeto | Next.js + Tailwind + deploy inicial na Vercel + **`README.md` do repositório** (o que é o projeto, stack, como rodar local, link pro site quando existir — documentação padrão de projeto, não confundir com o README de perfil da seção 10) |
 | 5. Build das seções | **TDD (6.2)**: teste → componente → refatora, nessa ordem. Dados primeiro (`content/*.ts`, sort, status, i18n) → componentes genéricos (`ProjectCard`, `ExperienceItem`, status) → páginas (Home/lista → Projeto → Sobre) |
 | 6. Polish | Animações, SEO, OG image, responsividade, acessibilidade, testes Vitest |
 | 7. Launch | Domínio próprio (opcional), compartilhar no LinkedIn |
