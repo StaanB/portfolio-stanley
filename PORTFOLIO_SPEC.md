@@ -119,22 +119,24 @@ Extraído dos READMEs de [ANIMATCH-WEB](https://github.com/StaanB/ANIMATCH-WEB) 
   - Cache client-side em `sessionStorage` por usuário+idioma, evitando chamadas repetidas de IA
   - GitHub Action com cron mensal pra repopular os embeddings no Pinecone automaticamente
 - **Por que é um bom case pro portfólio:** mostra full-stack completo (front + back + IA + infra), decisões de custo/performance conscientes (cache em várias camadas, fallback quando a IA falha) e não é só CRUD — tem pipeline de dados real.
+- **Formato no site:** ✅ **usa o print `assets/animatch-home.png`** — projeto pessoal, sem restrição de confidencialidade, então a imagem do produto entra no case.
 - **Repos:** [animatch-web](https://github.com/StaanB/ANIMATCH-WEB) · [animatch-api](https://github.com/StaanB/ANIMATCH-API)
 
 ### 4.3 Cases — DPMS e Digitalize (projetos profissionais)
 
-Tratamento definido: **sem nome/logo de cliente, sem prints internos** — só função exercida, stack e entregas. Formato "case de atuação", não "vitrine do produto do cliente":
+Tratamento definido: **sem nome/logo de cliente, sem dado interno de operação** — só função exercida, stack e entregas. Formato "case de atuação", não "vitrine do produto do cliente":
 
 - **DPMS (Oxeanbits):**
   - Contexto: sistema "Order to Invoice" para gestão industrial (a partir do print em `assets/dpms-home.png`, referente a login).
   - Função: Desenvolvedor Front-end Junior — construção e manutenção de features/módulos, refatoração de código legado, componentização e integração com APIs.
   - Stack a destacar: React, **SASS** (arquitetura de estilos, não só CSS solto), Jest, Cypress, Figma, Ruby on Rails (básico), Docker, i18n, SCRUM/ClickUp.
-  - Ângulo do case: já que não pode mostrar telas reais do produto, o destaque vai para a **engenharia de SASS** (organização de estilos em escala, variáveis, mixins) e o processo (testes automatizados com Jest/Cypress, fluxo ágil) — isso é conteúdo seu, não do cliente.
+  - Ângulo do case: destaque pra **engenharia de SASS** (organização de estilos em escala, variáveis, mixins) e o processo (testes automatizados com Jest/Cypress, fluxo ágil) — isso é conteúdo seu, não do cliente.
+  - **Formato no site (revisado):** ✅ **usa o print `assets/dpms-home.png`** (tela de login, sem dado de cliente/operação visível) — decidido manter a imagem nesse case.
 - **Digitalize (app mobile):**
-  - Contexto: aplicativo de digitalização/gestão modular (a partir do print `assets/digitalize-sample.webp`).
+  - Contexto: aplicativo de digitalização/gestão modular (a partir do print `assets/digitalize-sample.webp`, foto pública da loja de apps).
   - Empresa/período: Oxeanbits, dentro do mesmo vínculo abr/2024–nov/2025 (seção 4.1).
   - Stack: **Flutter** (mobile), **Ruby** (backend/integração) e **GraphQL** (camada de dados) — vale destacar como contraponto ao case de DPMS/AniMatch: mostra que você transita de front web (React/Next) pra mobile (Flutter) e sabe consumir GraphQL, não só REST.
-- **Formato no site:** sem screenshot do produto — usar um card com ícone/tipografia (consistente com a paleta preto+laranja) no lugar da imagem, texto focado em responsabilidade + stack + resultado (ex: "reduziu tempo de X", "modularizou Y").
+  - **Formato no site (mantido):** sem screenshot — usar um card com ícone/tipografia (consistente com a paleta preto+laranja) no lugar da imagem, texto focado em responsabilidade + stack + resultado (ex: "reduziu tempo de X", "modularizou Y"). **Decisão do Stanley, não é por confidencialidade** (o print é uma foto pública da loja de apps) — só preferência de não usar essa imagem específica no case.
 
 ### 4.5 Case — Assistente IA / "Stanley IA" (4º case, projeto pessoal)
 
@@ -323,11 +325,10 @@ Levantamento honesto do que falta fixar pra um ciclo sem supervisão não travar
 - **Fluxo de branch/PR (decidido):** o repositório sobe pro GitHub com uma `main` vazia. A partir daí, **1 branch + 1 PR por fase do roadmap** (seção 8) — não 1 PR por unidade de TDD (muito granular pra um site desse tamanho, viraria overhead sem ganho real). Os commits granulares do TDD (6.2) ficam dentro de cada branch normalmente; o PR representa uma entrega coerente (ex: "camada de dados + testes", "componentes genéricos", "página Home", "página de Projeto", "página Sobre", "Polish"). Ciclo por fase: **abrir branch → implementar em TDD → abrir PR → revisar (usar a skill `/code-review` no diff antes de aprovar) → mergear → seguir pra próxima fase.** O merge fica condicionado ao PR passar na revisão, não é automático.
 - **Assets:** `assets/logo-wordmark-stanley-b.png`, `assets/favicon-sb.png` e os prints de referência precisam ser copiados/importados pra dentro do projeto Next.js (`public/` ou via `import` de imagem) — não migram sozinhos.
 - **⚠️ Limpeza pendente pro próximo commit:** hoje o repositório carrega arquivos que não vão pro produto final. Fazer nesse commit:
-  - **`assets/` — manter só o essencial:**
-    - ✅ Ficam: `logo-wordmark-stanley-b.png`, `favicon-sb.png` — usados de verdade (logo, favicon).
-    - ❌ Remover: `dpms-home.png`, `digitalize-sample.webp` — a seção 4.3 já decidiu **"sem screenshot do produto"** pra DPMS e Digitalize (card com ícone/tipografia no lugar), então esses prints não têm mais uso.
-    - ⚠️ `animatch-home.png` — **decisão pendente, não remover sem confirmar**: o protótipo atual (`00-prototipo-interativo.html`) não usa nenhuma imagem de produto em lugar nenhum (só tipografia, `p-body` é só texto), mas o schema de `projects.ts` (6.1) tem um campo `hasScreenshot` que sugere que a intenção original era usar. Perguntar ao Stanley se o case do AniMatch vai ganhar uma imagem no layout final antes de decidir remover esse arquivo.
-  - **`reference/` (prints do Van Holtz, currículo etc.):** eram material de apoio pra escrever a spec, não são usados pelo site. **Remover do git** (`git rm -r --cached reference/` + adicionar `reference/` no `.gitignore`) mas **manter os arquivos no disco local** — servem de consulta durante o desenvolvimento, só não precisam estar versionados/públicos.
+  - **`assets/` — manter só o essencial (decidido):**
+    - ✅ Ficam: `logo-wordmark-stanley-b.png`, `favicon-sb.png` (logo/favicon), `animatch-home.png` (case AniMatch usa print, seção 4.2 — projeto pessoal, sem restrição), `dpms-home.png` (case DPMS usa print, seção 4.3 — é só a tela de login, sem dado de cliente/operação exposto).
+    - ❌ Remover: `digitalize-sample.webp` — mesmo sendo uma foto pública da loja de apps (não é questão de confidencialidade), o Stanley preferiu não usar essa imagem nesse case (seção 4.3). O Digitalize mantém o formato "card com ícone/tipografia" sem imagem.
+  - **`reference/` (prints do Van Holtz etc.):** eram material de apoio pra escrever a spec, não são usados pelo site. **Remover do git** (`git rm -r --cached reference/` + adicionar `reference/` no `.gitignore`) mas **manter os arquivos no disco local** — servem de consulta durante o desenvolvimento, só não precisam estar versionados/públicos.
 - **Tradução do protótipo pro Next.js real (atenção):** o protótipo interativo (`wireframes/00-prototipo-interativo.html`) troca de "tela" via JS dentro de uma única página — isso é uma técnica de protótipo, **não é pra portar literalmente**. Na implementação real, isso vira rotas de verdade do App Router (`/`, `/projetos/[slug]`, `/sobre`) com SSR, e o "nunca recarrega" fica por conta de um `app/layout.tsx` persistente (logo/nav/rodapé no layout, não em cada página) + transição via Framer Motion (`AnimatePresence`) — o efeito visual é o mesmo, a arquitetura por baixo é diferente e melhor (SEO, compartilhamento de link por case).
 - **⚠️ Onde o ciclo autônomo deve parar e pedir confirmação:** deploy/publicação (fase 7) não deve rodar sem check-in — publicar o site é uma ação visível publicamente, fora do escopo de "só codar". O `/goal` pode ir com segurança até o fim da fase 6 (Polish: build local passando, testes verdes, Lighthouse ok) e parar aí pra você revisar antes do `vercel --prod` ou equivalente. Mesma lógica pra criar o repositório no GitHub (se ainda não existir) — confirmo com você antes de criar algo na sua conta.
 
@@ -391,6 +392,7 @@ Decidido: o site terá os dois idiomas, com toggle manual (🌐 PT ↔ EN) — m
 - Estrutura de projetos → rota própria `/projetos/[slug]` por case, sem sidebar em caixa (3, 5)
 - Cases AniMatch, DPMS, Digitalize, Stanley IA, Prolog App, meta → conteúdo completo (4.2–4.7)
 - Tratamento de DPMS/Digitalize sem dado de cliente (4.3)
+- Uso de screenshot por case → AniMatch e DPMS usam print, Digitalize não (preferência, não confidencialidade) (4.2, 4.3, 6.3)
 - Fluxo de tradução → PT-BR primeiro, revisão, depois EN (7.1)
 - Autenticação Canva → resolvida, MCP disponível (5)
 - Ferramenta de wireframe → Claude Design via `DesignSync`, evoluído pra protótipo interativo (5, 8)
