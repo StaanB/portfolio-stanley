@@ -22,7 +22,7 @@
 - **Situação de carreira (definida):** empregado atualmente (Prolog App, desde dez/2025), mas o site exibe um bloco de status tipo "aberto a conversar" — nunca "disponível para contratação imediata". Texto sugerido: PT-BR *"Empregado atualmente, mas sempre aberto a trocar ideia sobre novos projetos e oportunidades"* / EN *"Currently employed, but always open to a conversation about new projects and opportunities"*.
 - **Requisito técnico — flag de status:** esse status precisa ser **uma flag simples de trocar**, não texto hardcoded espalhado pelo site — uma constante/config única (ex. `status: "employed" | "open_to_work"` num arquivo de conteúdo) que alimenta o texto e o indicador visual (ex. bolinha verde/laranja) em todo lugar que ele aparece. Trocar de "empregado" pra "buscando oportunidade" deve ser uma linha, não uma busca por todo o código.
 
-**Cargo do hero (atualizado):** "Software Developer" (EN) / "Desenvolvedor de Software" (PT-BR) — com nível **Pleno-Sênior** explícito no subtítulo/bio (ex: "Pleno-Sênior" / "Mid-Senior"), não mais um título genérico. Você se considera consolidado em Pleno IV, então o posicionamento sobe de patamar em relação à primeira versão da spec.
+**Cargo do hero (atualizado):** "Software Developer" (EN) / "Desenvolvedor de Software" (PT-BR) — com nível **Pleno-Sênior** explícito no subtítulo/bio (ex: "Pleno-Sênior" / "Mid-Senior"), não mais um título genérico. Posicionamento revisado pra cima em relação à primeira versão da spec, com base na experiência já consolidada.
 
 **Mensagem central (atualizada):** você não é só front-end — hoje transita nas 3 pontas (front, back, mobile) e já entrega com autonomia real:
 
@@ -313,7 +313,7 @@ Ordem por unidade de trabalho (componente, hook, ou função de conteúdo):
 
 ### 6.3 Checklist técnico pra execução autônoma (`/goal`)
 
-Levantamento honesto do que falta fixar pra um ciclo sem supervisão não travar em decisão ambígua no meio do caminho — **pasta ainda não é um repo git, não tem `package.json`** (checado agora: só spec, `assets/`, `reference/`, `wireframes/`). Decisões fixadas aqui pra não precisar reperguntar a cada rodada:
+Levantamento honesto do que falta fixar pra um ciclo sem supervisão não travar em decisão ambígua no meio do caminho. **Repositório criado:** [github.com/StaanB/portfolio-stanley](https://github.com/StaanB/portfolio-stanley), `main` com só spec/assets/referências/protótipo (sem código de app ainda — isso entra por PR, fase por fase, ver abaixo). Decisões fixadas aqui pra não precisar reperguntar a cada rodada:
 
 - **Gerenciador de pacotes:** `npm` (já é o que está instalado no ambiente, sem necessidade de instalar pnpm/yarn).
 - **TypeScript:** modo `strict: true` desde o início.
@@ -425,3 +425,17 @@ Investigado a pedido do Stanley (não era conteúdo, era coisa quebrada de verda
 - **Imagem quebrada no README:** era o badge do **`github-profile-trophy.vercel.app`** — o serviço público está fora do ar (retorna "Payment required / DEPLOYMENT_DISABLED", não é problema do lado do Stanley). **Removido** no mesmo commit — não tinha como consertar um serviço de terceiro que não existe mais.
 - **⚠️ Achado extra pra ficar de olho:** ao tentar usar `github-readme-stats.vercel.app` como substituto do trophy, a instância pública retornou **503 em 3 tentativas seguidas** — é um problema conhecido desse serviço (instância compartilhada fica sobrecarregada). **Não adicionei** pra não trocar um badge quebrado por outro instável. Se quiser mesmo assim usá-lo no update pós-launch (10), a opção mais robusta é **hospedar sua própria instância** (é open-source, deploy grátis na Vercel, sem depender da instância pública compartilhada) — decisão pra quando chegar nessa fase.
 - Trocado `http://` por `https://` nos links dos cards de stats existentes (evita um redirect 308 à toa).
+
+### 10.2 Ainda quebrado — "GitHub Commits" / "GitHub Details" (cards do `github-profile-summary-cards`)
+
+Confirmado com print do Stanley que continuam quebrados mesmo depois do fix de http→https (10.1). Investiguei mais a fundo:
+
+- **Causa raiz real:** não é o link, é o **proxy de imagem do próprio GitHub (Camo)**. O serviço `github-profile-summary-cards.vercel.app` responde certinho (200, SVG válido) quando acessado direto — mas o Camo (que o GitHub usa pra servir toda imagem externa em README, por segurança) **rejeita a resposta com 400 "Non-Image content-type returned"**, porque o header `Content-Type: image/svg+xml; charset=utf-8` que o serviço devolve não bate com o que o Camo aceita. Bug do lado do serviço terceiro, não dá pra consertar só editando o README.
+- **Tentei o substituto óbvio (`github-readme-stats`)** de novo, sem sucesso — **está fora do ar de verdade**: testei os dois endpoints principais (`/api` e `/api/top-langs`), com retry, 503 em todos. Não é instabilidade pontual, confirmei duas vezes com intervalo.
+
+**Plano de melhoria:**
+1. ✅ **Feito** — cards do `summary-cards` removidos: [`a6d2317`](https://github.com/StaanB/StaanB/commit/a6d2317). `skillicons.dev` e os badges de contato (shields.io) continuam de pé — esses dois nunca falharam nos testes.
+2. **Aprovado condicionalmente, não feito ainda:** hospedar sua própria instância do `github-readme-stats` (open-source, deploy grátis na Vercel) — resolve a dependência da instância pública sobrecarregada e o problema do Camo não se repetiria (você controla o header de content-type). Combinado: só faz sentido se o resultado final ficar visualmente igual ao README de hoje, sem regressão — senão não compensa o esforço extra de manter uma instância própria no ar.
+3. **Aprovado condicionalmente, não feito ainda:** README mais "estático" — só skillicons + badges de contato + gráfico de contribuição 3D, sem card dinâmico de terceiro. Combinado: só se eu deixar bem organizado (não é só remover, é reorganizar o espaçamento/hierarquia depois que os cards saírem).
+
+**Nota:** 2 e 3 são alternativas entre si (uma mantém card de stats, a outra abre mão dele) — não fazem sentido juntas. Ficam registradas as duas condições; a escolha entre elas fica pra quando entrarmos nessa fase (pós-launch, seção 10).
