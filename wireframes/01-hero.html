@@ -1,0 +1,40 @@
+<!-- @dsCard group="Wireframe — Seções" -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Wireframe — Hero</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, Helvetica, sans-serif; background: #fff; color: #111; }
+  .section { min-height: 100vh; padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; border: 2px dashed #ccc; }
+  .label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 24px; }
+  .name { font-size: 20px; font-weight: bold; margin-bottom: 8px; }
+  .headline { font-size: 40px; font-weight: 900; line-height: 1.15; max-width: 780px; margin-bottom: 24px; }
+  .headline .accent { background: #ddd; padding: 0 4px; }
+  .subtitle { font-size: 16px; color: #555; max-width: 600px; margin-bottom: 32px; }
+  .status { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #555; border: 1px solid #ccc; padding: 8px 14px; border-radius: 999px; width: fit-content; margin-bottom: 40px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #999; }
+  .ctas { display: flex; gap: 16px; }
+  .btn { border: 2px solid #111; padding: 12px 24px; font-size: 14px; font-weight: bold; text-transform: uppercase; }
+  .btn.ghost { border-color: #ccc; color: #777; }
+  .nav-hint { position: fixed; top: 24px; right: 64px; font-size: 11px; color: #999; border: 1px dashed #ccc; padding: 6px 10px; }
+  .logo-hint { position: fixed; bottom: 24px; left: 64px; font-size: 11px; color: #999; border: 1px dashed #ccc; padding: 6px 10px; }
+</style>
+</head>
+<body>
+  <div class="nav-hint">nav ancorada / numerada — placeholder</div>
+  <div class="logo-hint">wordmark flutuante "STANLEY B." — placeholder</div>
+  <section class="section">
+    <div class="label">01 — Hero</div>
+    <div class="name">Stanley Brenner</div>
+    <h1 class="headline">Desenvolvedor <span class="accent">Pleno-Sênior full-stack</span> (React, Next.js, Node, Flutter) com um fluxo de desenvolvimento <span class="accent">AI-first</span> — da spec ao deploy — e entregas com <span class="accent">zero bugs</span> em produção.</h1>
+    <p class="subtitle">Software Developer · Florianópolis/Palhoça, SC</p>
+    <div class="status"><span class="dot"></span> Empregado, mas aberto a conversar</div>
+    <div class="ctas">
+      <div class="btn">Contato</div>
+      <div class="btn ghost">Ver projetos ↓</div>
+    </div>
+  </section>
+</body>
+</html>

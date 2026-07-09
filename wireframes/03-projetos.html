@@ -1,0 +1,66 @@
+<!-- @dsCard group="Wireframe — Seções" -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Wireframe — Projetos</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, Helvetica, sans-serif; background: #fff; color: #111; }
+  .section { min-height: 100vh; padding: 80px 64px; border: 2px dashed #ccc; }
+  .label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 24px; }
+  .title { font-size: 28px; font-weight: 900; margin-bottom: 40px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .card { border: 1px solid #ccc; padding: 24px; min-height: 180px; display: flex; flex-direction: column; justify-content: space-between; }
+  .card .tag { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-bottom: 12px; }
+  .card h3 { font-size: 20px; margin-bottom: 8px; }
+  .card p { font-size: 13px; color: #666; line-height: 1.5; }
+  .card .stack { margin-top: 16px; font-size: 11px; color: #999; }
+  .card.featured { grid-column: span 2; background: #fafafa; }
+  .route-hint { font-size: 10px; color: #aaa; margin-top: 12px; }
+</style>
+</head>
+<body>
+  <section class="section">
+    <div class="label">03 — Projetos / Cases</div>
+    <h2 class="title">Projetos</h2>
+    <div class="grid">
+      <div class="card featured">
+        <div class="tag">Destaque · Projeto pessoal</div>
+        <h3>AniMatch</h3>
+        <p>Sistema de recomendação de anime com IA — perfil semântico + busca vetorial (Pinecone) + ranking com Gemini Flash.</p>
+        <div class="stack">Next.js · NestJS · Pinecone · Gemini Flash</div>
+        <div class="route-hint">/projetos/animatch</div>
+      </div>
+      <div class="card">
+        <div class="tag">Case profissional</div>
+        <h3>DPMS</h3>
+        <p>Order to Invoice — engenharia de SASS em escala, testes automatizados, componentização.</p>
+        <div class="stack">React · SASS · Jest · Cypress</div>
+        <div class="route-hint">/projetos/dpms</div>
+      </div>
+      <div class="card">
+        <div class="tag">Case profissional</div>
+        <h3>Digitalize</h3>
+        <p>App mobile de digitalização/gestão modular — front web → mobile, GraphQL.</p>
+        <div class="stack">Flutter · Ruby · GraphQL</div>
+        <div class="route-hint">/projetos/digitalize</div>
+      </div>
+      <div class="card">
+        <div class="tag">Projeto pessoal</div>
+        <h3>Assistente IA</h3>
+        <p>Conteúdo a levantar (ver spec 4.5) — reforça o ângulo AI-first.</p>
+        <div class="stack">a definir</div>
+        <div class="route-hint">/projetos/assistente-ia</div>
+      </div>
+      <div class="card">
+        <div class="tag">Meta · Como fiz este site</div>
+        <h3>Este portfólio</h3>
+        <p>Spec → wireframe (Claude Design) → logo (Canva) → build — o processo AI-first documentado de ponta a ponta.</p>
+        <div class="stack">Claude Code · Claude Design · Canva MCP</div>
+        <div class="route-hint">/projetos/como-fiz-este-portfolio</div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
