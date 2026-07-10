@@ -74,7 +74,7 @@
 | 8. Experiência (timeline) | ✅ Resolvido — puxado do CV (4.1) |
 | 9. Contato | ✅ Resolvido — email `stanleybrenner@gmail.com` (do CV), LinkedIn, GitHub |
 
-**O que falta de você agora, especificamente:** nada bloqueando o conteúdo — só revisar o protótipo interativo num celular real (seção 9).
+**O que falta de você agora, especificamente:** ✅ nada — protótipo revisado em celular real, sem problemas (seção 9). Conteúdo 100% fechado.
 
 ### 4.4 Skills — agrupamento proposto
 
@@ -167,7 +167,7 @@ Extraído do README de [ASSISTENTE-IA-STAANB](https://github.com/StaanB/ASSISTEN
 - **Definido:** o próprio processo de construção do site vira um case, com página própria `/projetos/como-fiz-este-portfolio` (ou slug equivalente) — reforça o posicionamento AI-first com prova concreta, não só discurso.
 - **Conteúdo a estruturar:** fluxo real usado — spec escrita e iterada em conversa com Claude Code (este documento), wireframe/design system prototipado no Claude Design (via `DesignSync`), logo/identidade visual gerada no Canva (via MCP), implementação assistida (Next.js/Tailwind/Framer Motion/GSAP) também com Claude Code.
 - **Ângulo do case:** não é "usei IA pra escrever código" genérico — é mostrar o processo de principio a fim (spec → design → asset → build → deploy) com as ferramentas reais, o que é raro de ver documentado e reforça a competência de "saber orquestrar IA", já citada como diferencial na seção 2.
-- **Pendente:** decidir nível de detalhe (screenshots do processo? trechos da spec? antes/depois do wireframe?) — retomar quando o layout e a logo estiverem prontos, pra já ter material concreto pra mostrar.
+- **Nível de detalhe:** ✅ decidido — **só texto** contando o processo (spec → design → asset → build → deploy), sem screenshots do processo nem antes/depois do wireframe. Mais simples de manter e já comunica o que precisa.
 
 ### 4.7 Case — Prolog App (emprego atual)
 
@@ -362,9 +362,9 @@ Decidido: o site terá os dois idiomas, com toggle manual (🌐 PT ↔ EN) — m
 
 | Fase | Entregável |
 |---|---|
-| 1. Conteúdo | Você fornece bio, projetos, skills, experiência, contato |
-| 2. Wireframe | ✅ Feito — substituído por um **protótipo interativo** (não mais telas estáticas cinza) em `wireframes/00-prototipo-interativo.html`, sincronizado no projeto "Portfólio Stanley Brenner" no Claude Design |
-| 3. Design system | Paleta e logo ✅ prontos (seção 5); tipografia com 3 opções geradas, aguardando escolha (5.1) |
+| 1. Conteúdo | ✅ Feito — bio, projetos, skills, experiência, contato, todos os 6 cases (4.2–4.7) |
+| 2. Wireframe | ✅ Feito — protótipo interativo em `wireframes/00-prototipo-interativo.html`, testado em celular real, sincronizado no projeto "Portfólio Stanley Brenner" no Claude Design |
+| 3. Design system | ✅ Feito — paleta, logo (5) e tipografia (5.1: Archivo Black + Work Sans) todos fechados |
 | 4. Setup do projeto | Next.js + Tailwind + deploy inicial na Vercel + **`README.md` do repositório** (o que é o projeto, stack, como rodar local, link pro site quando existir — documentação padrão de projeto, não confundir com o README de perfil da seção 10) |
 | 5. Build das seções | **TDD (6.2)**: teste → componente → refatora, nessa ordem. Dados primeiro (`content/*.ts`, sort, status, i18n) → componentes genéricos (`ProjectCard`, `ExperienceItem`, status) → páginas (Home/lista → Projeto → Sobre) |
 | 6. Polish | Animações, SEO, OG image, responsividade, acessibilidade, testes Vitest |
@@ -375,9 +375,11 @@ Decidido: o site terá os dois idiomas, com toggle manual (🌐 PT ↔ EN) — m
 
 ## 9. Decisões pendentes (precisam da sua resposta)
 
-1. **Revisão do protótipo num celular real (única pendência):** os ajustes de mobile (seção 7) foram aplicados por raciocínio, não testados ao vivo — pedir confirmação visual antes de considerar o design 100% fechado.
+✅ **Nenhuma.** As duas últimas foram fechadas: protótipo testado num celular real (sem problemas) e nível de detalhe do case meta decidido (só texto, seção 4.6). **A spec está fechada — pode começar a fase 4 (setup do projeto).**
 
 ### Já fechado (não precisa mais decidir)
+- Protótipo testado em celular real → sem problemas, ajustes de mobile confirmados (7)
+- Case meta "como este portfólio foi construído" → só texto, sem screenshots (4.6)
 - Frase de posicionamento / headline do hero (2) — mora dentro de `/sobre` (3, 5)
 - Bio final escolhida (2.1)
 - Foto → sem foto (4)
