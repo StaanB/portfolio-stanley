@@ -39,7 +39,7 @@
 
 *(Versão EN a produzir na fase de tradução — fluxo definido na seção 7.1: escrevo, você revisa, depois traduzo.)*
 
-**Ainda pendente:** tom geral (mais formal/corporativo vs. mais pessoal/informal) — a bio escolhida já é razoavelmente equilibrada, pode servir como padrão de tom pro resto do site.
+**Tom geral:** ✅ resolvido implicitamente — a bio escolhida (equilibrada, nem formal demais nem informal demais) já serve como padrão de tom pro resto do site, seguido em todos os cases escritos (4.2–4.7).
 
 ---
 
@@ -74,7 +74,7 @@
 | 8. Experiência (timeline) | ✅ Resolvido — puxado do CV (4.1) |
 | 9. Contato | ✅ Resolvido — email `stanleybrenner@gmail.com` (do CV), LinkedIn, GitHub |
 
-**O que falta de você agora, especificamente:** nada bloqueando o conteúdo — só a escolha da tipografia (seção 5.1, comparação já gerada) e revisar o protótipo interativo num celular real.
+**O que falta de você agora, especificamente:** nada bloqueando o conteúdo — só revisar o protótipo interativo num celular real (seção 9).
 
 ### 4.4 Skills — agrupamento proposto
 
@@ -99,7 +99,7 @@ Abraçando a atuação multi-stack e o uso de IA como diferencial central (não 
 - **Formação:** UniFatecie — Sistemas Web (2024–2026, em curso); EBAC — Full Stack Python (2023–2024)
 - **Idiomas:** Português (nativo), Inglês (fluente), Japonês (básico)
 - **Projetos pessoais linkados no currículo:** `portfolio-staanb.vercel.app`, `assistente-ia-two.vercel.app` — usar como base junto com o GitHub para popular a seção de Projetos.
-- **Prints já disponíveis em `assets/`:** AniMatch (projeto pessoal, detalhado abaixo), DPMS e app de digitalização mobile (contexto profissional — vêm de trabalho remunerado, então tratar como cases sem expor dados/clientes sensíveis).
+- **Prints em `assets/` (atualizado após decisão final de uso por case, 4.2/4.3/6.3):** `animatch-home.png` e `dpms-home.png` ficam e são usados nos respectivos cases; o print do Digitalize foi removido (case fica sem imagem, por preferência do Stanley).
 
 ### 4.2 Case — AniMatch (projeto pessoal, destaque principal)
 
@@ -200,11 +200,6 @@ Pesquisado via LinkedIn e site público ([prologapp.com](https://prologapp.com/)
   - **Contraste/acessibilidade — versão final (resolvida):** depois de duas iterações, o estado padrão da lista de projetos é **laranja sólido** (não contorno) — resolve o problema de mobile de raiz, porque não existe mais um estado "fantasma" que só a `:hover` revelava (mobile não tem hover). No `:hover`/`:active`, o título vira **contorno laranja vazado** (preenchimento transparente + `-webkit-text-stroke` na mesma cor de destaque) — nunca contorno preto/escuro, porque sobre o fundo quase-preto (`#0A0908`) um contorno escuro fica invisível ou quase. Manter tudo na mesma cor (laranja) garante que o estado de foco nunca "some", só troca de peso visual (preenchido → vazado).
   - **Cor de fundo — decisão validada:** cheguei a levantar a possibilidade de inverter (fundo laranja, texto preto/branco) e montei uma [comparação visual](https://claude.ai/code/artifact/7fc2a7fa-6346-4b8e-a5f8-58cf3b2d78ad) — **mantido preto de fundo + laranja de destaque** (opção atual). Fundo laranja em 100% das telas (incluindo páginas de projeto com parágrafo longo) cansa a leitura e faz o laranja perder a função de "destaque" que justificou a escolha de cor na primeira vez (seção 5, justificativa de cor). **Ideia registrada, não decidida:** usar laranja de fundo só na home (que é curta, sem parágrafo) e preto nas páginas internas, igual ao próprio Van Holtz faz — ainda não prototipado, só ficou registrado como possibilidade se quiser revisitar depois.
   - **Limite do protótipo em CSS puro / próximo passo com lib:** o que está em `00-prototipo-interativo.html` usa só CSS (`transform`, `transition`, custom properties) pra aproximar o efeito "roleta"/kinetic do Van Holtz e da referência de estilo Persona que você mencionou. Pra motion de verdade nesse nível — rotação amarrada ao scroll, hover com física (magnetic/spring), drift contínuo — vale a pena investir em **GSAP** (já previsto na seção 6: Framer Motion + GSAP ScrollTrigger) na implementação real, em vez de tentar esticar CSS puro além do que ele aguenta bem. Registrado aqui pra não se perder — é trabalho da fase 5/6 do roadmap (seção 8), não do protótipo.
-### 5.1 Tipografia ✅ Resolvido
-
-**Sobre a fonte do Van Holtz:** não dá pra confirmar o arquivo exato sem acesso ao CSS deles (site de terceiro, não é algo pra "inspecionar" via scraping) — mas visualmente o desenho da "O"/"G" não bate com nenhuma família gratuita comum, então é provável que seja uma fonte paga/customizada. Em vez de tentar imitar 1:1, gerei 3 opções reais e gratuitas (Google Fonts) com o mesmo espírito (caixa alta, traço grosso, cantos retos): **[comparação ao vivo](https://claude.ai/code/artifact/7be61ee9-3f17-4c37-87a2-e917b5c81019)**.
-
-**Escolhida: Opção 1 — Archivo Black (display) + Work Sans (corpo).** A mais próxima do Van Holtz — bloco denso, geométrica, sem cantos suaves. Já aplicada no protótipo interativo (`wireframes/00-prototipo-interativo.html`), ambas fontes gratuitas via Google Fonts, prontas pra usar com `next/font/google` na implementação real (sem custo de licença, sem FOUT se configurado certo).
 - **Motion (requisito, não opcional):**
   - Transição de página inteira ao navegar entre seções/rotas (fade, wipe ou slide — a definir)
   - Scroll com efeito: elementos entram em cena de forma coreografada conforme o scroll (não é só fade-in simples)
@@ -216,6 +211,12 @@ Pesquisado via LinkedIn e site público ([prologapp.com](https://prologapp.com/)
   - **Favicon "SB"** — só as 2 iniciais, badge compacto, mesma paleta. Uso: ícone da aba do navegador. Arquivo: `assets/favicon-sb.png`.
   - Exportação original do Canva veio com fundo preto sólido (conta Free não permite PNG transparente) — você removeu o fundo manualmente e substituiu os dois arquivos em `assets/` pelas versões com fundo transparente. Prontos pra uso direto sobre qualquer seção do site.
   - **Pendente de polish (menor):** ainda dá pra apertar um pouco o enquadramento (espaço vazio nas bordas) na hora de integrar como asset real do site (fase 6 — Polish, seção 8), mas não bloqueia nada.
+
+### 5.1 Tipografia ✅ Resolvido
+
+**Sobre a fonte do Van Holtz:** não dá pra confirmar o arquivo exato sem acesso ao CSS deles (site de terceiro, não é algo pra "inspecionar" via scraping) — mas visualmente o desenho da "O"/"G" não bate com nenhuma família gratuita comum, então é provável que seja uma fonte paga/customizada. Em vez de tentar imitar 1:1, gerei 3 opções reais e gratuitas (Google Fonts) com o mesmo espírito (caixa alta, traço grosso, cantos retos): **[comparação ao vivo](https://claude.ai/code/artifact/7be61ee9-3f17-4c37-87a2-e917b5c81019)**.
+
+**Escolhida: Opção 1 — Archivo Black (display) + Work Sans (corpo).** A mais próxima do Van Holtz — bloco denso, geométrica, sem cantos suaves. Já aplicada no protótipo interativo (`wireframes/00-prototipo-interativo.html`), ambas fontes gratuitas via Google Fonts, prontas pra usar com `next/font/google` na implementação real (sem custo de licença, sem FOUT se configurado certo).
 
 ---
 
@@ -324,7 +325,7 @@ Levantamento honesto do que falta fixar pra um ciclo sem supervisão não travar
 - **Git:** `git init` faz parte da fase 4 (setup), não é opcional nem posterior. **Um commit por unidade de trabalho do TDD (6.2)** — além de boa prática, isso gera um histórico limpo que vira material real pro case meta "como este portfólio foi construído" (4.6): dá pra literalmente mostrar o log de commits como prova do processo.
 - **Fluxo de branch/PR (decidido):** o repositório sobe pro GitHub com uma `main` vazia. A partir daí, **1 branch + 1 PR por fase do roadmap** (seção 8) — não 1 PR por unidade de TDD (muito granular pra um site desse tamanho, viraria overhead sem ganho real). Os commits granulares do TDD (6.2) ficam dentro de cada branch normalmente; o PR representa uma entrega coerente (ex: "camada de dados + testes", "componentes genéricos", "página Home", "página de Projeto", "página Sobre", "Polish"). Ciclo por fase: **abrir branch → implementar em TDD → abrir PR → revisar (usar a skill `/code-review` no diff antes de aprovar) → mergear → seguir pra próxima fase.** O merge fica condicionado ao PR passar na revisão, não é automático.
 - **Assets:** `assets/logo-wordmark-stanley-b.png`, `assets/favicon-sb.png` e os prints de referência precisam ser copiados/importados pra dentro do projeto Next.js (`public/` ou via `import` de imagem) — não migram sozinhos.
-- **⚠️ Limpeza pendente pro próximo commit:** hoje o repositório carrega arquivos que não vão pro produto final. Fazer nesse commit:
+- **✅ Limpeza de assets feita** ([`2fda8fa`](https://github.com/StaanB/portfolio-stanley/commit/2fda8fa)):
   - **`assets/` — manter só o essencial (decidido):**
     - ✅ Ficam: `logo-wordmark-stanley-b.png`, `favicon-sb.png` (logo/favicon), `animatch-home.png` (case AniMatch usa print, seção 4.2 — projeto pessoal, sem restrição), `dpms-home.png` (case DPMS usa print, seção 4.3 — é só a tela de login, sem dado de cliente/operação exposto).
     - ❌ Remover: `digitalize-sample.webp` — mesmo sendo uma foto pública da loja de apps (não é questão de confidencialidade), o Stanley preferiu não usar essa imagem nesse case (seção 4.3). O Digitalize mantém o formato "card com ícone/tipografia" sem imagem.
