@@ -450,3 +450,11 @@ Confirmado com print do Stanley que continuam quebrados mesmo depois do fix de h
 3. **Aprovado condicionalmente, não feito ainda:** README mais "estático" — só skillicons + badges de contato + gráfico de contribuição 3D, sem card dinâmico de terceiro. Combinado: só se eu deixar bem organizado (não é só remover, é reorganizar o espaçamento/hierarquia depois que os cards saírem).
 
 **Nota:** 2 e 3 são alternativas entre si (uma mantém card de stats, a outra abre mão dele) — não fazem sentido juntas. Ficam registradas as duas condições; a escolha entre elas fica pra quando entrarmos nessa fase (pós-launch, seção 10).
+
+### 10.3 Ideia nova — README estilo "neofetch" (referência: perfil do Andrew Grant)
+
+Stanley mandou print do README de `github.com/Andrew6rant` como referência: estilo que imita a saída do comando `neofetch` do Linux — arte ASCII (gerada a partir de uma foto de rosto) do lado esquerdo, e do lado direito uma lista tipo "specs de sistema" mas usando dados pessoais/contato/stack no lugar de hardware real (`OS`, `Uptime`, `Languages.Programming`, `Contact`, `GitHub Stats`, etc.), tudo dentro de um bloco de código no README.
+
+- **Foto pra gerar a arte ASCII:** ✅ já disponível — `reference/eu.jpeg` (subida pelo Stanley especificamente pra esse uso). Fica só de referência local (não vai pro repo do portfólio, conforme já definido na seção sobre a pasta `reference/`).
+- **Como é feito:** a arte ASCII é gerada uma vez (ferramenta tipo `ascii-image-converter` ou `chafa` a partir da foto) e colada como texto fixo num bloco ` ``` ` do `README.md` — não é dinâmico. Os "specs" da direita também são texto estático, editado à mão (não vem de nenhuma Action). Os números de "GitHub Stats" no rodapé desse estilo normalmente vêm de um serviço tipo `github-readme-stats` — já sabemos que a instância pública está instável (10.1/10.2), então só entraria se decidirmos pela opção de self-host (10.2, item 2).
+- **Status:** ideia registrada, não decidida ainda — entra na mesma leva de decisões da seção 10 (pós-launch, depois que o portfólio estiver no ar). Quando chegar nessa fase, preparo um rascunho do bloco (arte ASCII + specs) pra aprovação antes de qualquer commit no `StaanB/StaanB`.
