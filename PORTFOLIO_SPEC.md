@@ -446,7 +446,7 @@ Confirmado com print do Stanley que continuam quebrados mesmo depois do fix de h
 
 **Plano de melhoria:**
 1. ✅ **Feito** — cards do `summary-cards` removidos: [`a6d2317`](https://github.com/StaanB/StaanB/commit/a6d2317). `skillicons.dev` e os badges de contato (shields.io) continuam de pé — esses dois nunca falharam nos testes.
-2. **Aprovado condicionalmente, não feito ainda:** hospedar sua própria instância do `github-readme-stats` (open-source, deploy grátis na Vercel) — resolve a dependência da instância pública sobrecarregada e o problema do Camo não se repetiria (você controla o header de content-type). Combinado: só faz sentido se o resultado final ficar visualmente igual ao README de hoje, sem regressão — senão não compensa o esforço extra de manter uma instância própria no ar.
+2. **✅ Decidido (ver 10.3):** hospedar sua própria instância do `github-readme-stats` (open-source, deploy grátis na Vercel) — resolve a dependência da instância pública sobrecarregada e o problema do Camo não se repetiria (você controla o header de content-type). Vai ser feita junto com o README novo estilo neofetch (10.3), não mais como item isolado.
 3. **Aprovado condicionalmente, não feito ainda:** README mais "estático" — só skillicons + badges de contato + gráfico de contribuição 3D, sem card dinâmico de terceiro. Combinado: só se eu deixar bem organizado (não é só remover, é reorganizar o espaçamento/hierarquia depois que os cards saírem).
 
 **Nota:** 2 e 3 são alternativas entre si (uma mantém card de stats, a outra abre mão dele) — não fazem sentido juntas. Ficam registradas as duas condições; a escolha entre elas fica pra quando entrarmos nessa fase (pós-launch, seção 10).
@@ -458,3 +458,20 @@ Stanley mandou print do README de `github.com/Andrew6rant` como referência: est
 - **Foto pra gerar a arte ASCII:** ✅ já disponível — `reference/eu.jpeg` (subida pelo Stanley especificamente pra esse uso). Fica só de referência local (não vai pro repo do portfólio, conforme já definido na seção sobre a pasta `reference/`).
 - **Como é feito:** a arte ASCII é gerada uma vez (ferramenta tipo `ascii-image-converter` ou `chafa` a partir da foto) e colada como texto fixo num bloco ` ``` ` do `README.md` — não é dinâmico. Os "specs" da direita também são texto estático, editado à mão (não vem de nenhuma Action). Os números de "GitHub Stats" no rodapé desse estilo normalmente vêm de um serviço tipo `github-readme-stats` — já sabemos que a instância pública está instável (10.1/10.2), então só entraria se decidirmos pela opção de self-host (10.2, item 2).
 - **Status:** ideia registrada, não decidida ainda — entra na mesma leva de decisões da seção 10 (pós-launch, depois que o portfólio estiver no ar). Quando chegar nessa fase, preparo um rascunho do bloco (arte ASCII + specs) pra aprovação antes de qualquer commit no `StaanB/StaanB`.
+
+**Campos definidos pro "specs" da direita** (adaptados do exemplo, cortando o que não tem equivalente real — `OS`, `Kernel`, overclocking/undervolting não se aplicam):
+
+| Campo | Conteúdo |
+|---|---|
+| `Role` | Full Stack Dev (AI-first) |
+| `Coding since` | 2021 |
+| `Host` | Prolog App |
+| `IDE` | VSCode |
+| `Languages.Programming` | JavaScript, TypeScript, Ruby, Java |
+| `Languages.Framework` | React, Next.js, Node.js, NestJS, Rails, Flutter |
+| `Languages.Real` | Português (nativo), Inglês (fluente), Japonês (básico) |
+| `Hobbies` | Animes, jogos, futebol |
+| `Contact` | LinkedIn, GitHub, Gmail, link do portfólio |
+| `GitHub Stats` | ✅ decidido — incluir, via instância própria hospedada do `github-readme-stats` (resolve a instabilidade/bug do Camo já documentados em 10.1/10.2 item 2) |
+
+Com isso, a opção 2 da seção 10.2 (hospedar `github-readme-stats` própria) passa de "aprovada condicionalmente" pra **decidida** — vai ser feita como parte da implementação desse README novo.
