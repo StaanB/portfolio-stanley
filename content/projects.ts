@@ -2,7 +2,7 @@ export type ProjectType = "employer" | "personal" | "meta";
 
 export type Project = {
   slug: string;
-  title: string;
+  title: { pt: string; en: string };
   date: string; // "YYYY-MM" or "YYYY-MM-DD" — sort key
   endDate?: string; // absent/ongoing
   type: ProjectType;
@@ -19,7 +19,7 @@ export type Project = {
 const rawProjects: Project[] = [
   {
     slug: "este-portfolio",
-    title: "Este Portfólio",
+    title: { pt: "Este Portfólio", en: "This Portfolio" },
     date: "2026-07-09",
     type: "meta",
     tagline: {
@@ -53,7 +53,7 @@ const rawProjects: Project[] = [
   },
   {
     slug: "animatch",
-    title: "AniMatch",
+    title: { pt: "AniMatch", en: "AniMatch" },
     date: "2026-04-13",
     type: "personal",
     tagline: {
@@ -103,7 +103,7 @@ const rawProjects: Project[] = [
   },
   {
     slug: "prolog-app",
-    title: "Prolog App",
+    title: { pt: "Prolog App", en: "Prolog App" },
     date: "2025-12",
     type: "employer",
     tagline: {
@@ -138,7 +138,7 @@ const rawProjects: Project[] = [
   },
   {
     slug: "stanley-ia",
-    title: "Stanley IA",
+    title: { pt: "Stanley IA", en: "Stanley IA" },
     date: "2025-10-02",
     type: "personal",
     tagline: {
@@ -183,7 +183,7 @@ const rawProjects: Project[] = [
   },
   {
     slug: "dpms",
-    title: "DPMS",
+    title: { pt: "DPMS", en: "DPMS" },
     date: "2024-04",
     endDate: "2025-11",
     type: "employer",
@@ -218,7 +218,7 @@ const rawProjects: Project[] = [
   },
   {
     slug: "digitalize",
-    title: "Digitalize",
+    title: { pt: "Digitalize", en: "Digitalize" },
     date: "2024-04",
     endDate: "2025-11",
     type: "employer",

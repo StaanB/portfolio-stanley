@@ -45,8 +45,10 @@ describe("projects", () => {
     expect(digitalize?.hasScreenshot).toBe(false);
   });
 
-  it("has bilingual tagline, summary, role and highlights for every project", () => {
+  it("has bilingual title, tagline, summary, role and highlights for every project", () => {
     for (const project of projects) {
+      expect(project.title.pt).toBeTruthy();
+      expect(project.title.en).toBeTruthy();
       expect(project.tagline.pt).toBeTruthy();
       expect(project.tagline.en).toBeTruthy();
       expect(project.summary.pt).toBeTruthy();
@@ -55,5 +57,15 @@ describe("projects", () => {
       expect(project.role.en).toBeTruthy();
       expect(project.highlights.length).toBeGreaterThan(0);
     }
+  });
+
+  it("translates the meta case title, keeps proper-noun titles identical across locales", () => {
+    const meta = projects.find((p) => p.slug === "este-portfolio");
+    expect(meta?.title.pt).toBe("Este Portfólio");
+    expect(meta?.title.en).toBe("This Portfolio");
+
+    const animatch = projects.find((p) => p.slug === "animatch");
+    expect(animatch?.title.pt).toBe("AniMatch");
+    expect(animatch?.title.en).toBe("AniMatch");
   });
 });
