@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useLocale, detectInitialLocale } from "@/lib/i18n";
 import { careerStatus } from "@/content/status";
 import { StatusBadge } from "@/components/StatusBadge";
+import { PageTransition } from "@/components/PageTransition";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const { locale, setLocale, t } = useLocale();
@@ -40,8 +41,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </nav>
       </header>
 
-      <main className="min-h-screen px-6 pb-24 pt-[212px] sm:px-8">
-        {children}
+      <main className="min-h-screen px-6 pb-24 pt-32 sm:px-8 sm:pt-[212px]">
+        <PageTransition>{children}</PageTransition>
       </main>
 
       <footer className="footer-strip fixed bottom-0 left-0 right-0 z-20 hidden items-center justify-between gap-4 border-t border-[#2A241C] bg-[#0A0908] px-6 py-3 text-xs text-[#A89E92] sm:flex">
