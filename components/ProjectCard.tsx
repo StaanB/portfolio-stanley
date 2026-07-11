@@ -15,10 +15,7 @@ export function ProjectCard({ project }: { project: Project }) {
     >
       <div className="flex items-baseline gap-4">
         <span className="font-mono text-sm text-[#A89E92]">{year}</span>
-        <span
-          className="font-display text-4xl uppercase text-[#FF6B1A] transition-all duration-300 [-webkit-text-stroke:0] group-hover:bg-transparent group-hover:text-transparent group-hover:[-webkit-text-stroke:2px_#FF6B1A] sm:text-6xl"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
+        <span className="font-display text-4xl uppercase text-[#FF6B1A] transition-all duration-300 [-webkit-text-stroke:0] group-hover:bg-transparent group-hover:text-transparent group-hover:[-webkit-text-stroke:2px_#FF6B1A] sm:text-6xl">
           {project.title}
         </span>
       </div>

@@ -24,6 +24,10 @@ export const dictionaries = {
     contactLinkedIn: "LinkedIn",
     contactGitHub: "GitHub",
     languageToggle: "Idioma",
+    highlightsHeading: "Destaques",
+    highlightMigration: "Migração completa de um sistema legado (PHP → React)",
+    highlightZeroBugs1: "0 bugs em produção — manutenção por placas inteiras",
+    highlightZeroBugs2: "0 bugs em produção — visualizador de arquivos do zero",
   },
   en: {
     navProjects: "Projects",
@@ -48,5 +52,9 @@ export const dictionaries = {
     contactLinkedIn: "LinkedIn",
     contactGitHub: "GitHub",
     languageToggle: "Language",
+    highlightsHeading: "Highlights",
+    highlightMigration: "Complete migration of a legacy system (PHP → React)",
+    highlightZeroBugs1: "0 bugs in production — fleet-wide maintenance feature",
+    highlightZeroBugs2: "0 bugs in production — file viewer built from scratch",
   },
 };
