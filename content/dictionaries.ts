@@ -1,0 +1,52 @@
+export type DictionaryKey = keyof typeof dictionaries.pt;
+
+export const dictionaries = {
+  pt: {
+    navProjects: "Projetos",
+    navAbout: "Sobre",
+    nextProject: "Próximo projeto",
+    roleLabel: "Papel",
+    yearLabel: "Ano",
+    stackLabel: "Stack",
+    linksLabel: "Links",
+    aboutHeadline:
+      "Desenvolvedor Pleno-Sênior full-stack (React, Next.js, Node, Flutter) com um fluxo de desenvolvimento AI-first — da spec ao deploy — e entregas com zero bugs em produção, incluindo migrações completas de stack.",
+    aboutBio:
+      "Sou desenvolvedor Pleno-Sênior full-stack, atuando com React, Next.js, Node/NestJS, Ruby on Rails e Flutter em produtos SaaS de alta demanda. Na Prolog App, migrei um sistema legado de PHP para React e construí duas features do zero — uma página de manutenção por placas inteiras e um visualizador de arquivos — ambas em produção sem nenhum bug registrado. Hoje também trabalho num fluxo AI-first, usando Claude Code, Gemini e Codex desde a escrita da spec até o deploy, e estou me preparando para o próximo passo: liderança técnica.",
+    experienceHeading: "Experiência",
+    skillsHeading: "Skills",
+    skillsFrontend: "Front-end",
+    skillsBackendMobile: "Back-end & Mobile",
+    skillsAiData: "IA & Dados",
+    skillsQuality: "Qualidade & Processo",
+    skillsCloud: "Cloud/DevOps",
+    contactEmail: "Email",
+    contactLinkedIn: "LinkedIn",
+    contactGitHub: "GitHub",
+    languageToggle: "Idioma",
+  },
+  en: {
+    navProjects: "Projects",
+    navAbout: "About",
+    nextProject: "Next project",
+    roleLabel: "Role",
+    yearLabel: "Year",
+    stackLabel: "Stack",
+    linksLabel: "Links",
+    aboutHeadline:
+      "Mid-Senior full-stack Developer (React, Next.js, Node, Flutter) with an AI-first development workflow — from spec to deploy — and zero-bug deliveries in production, including complete stack migrations.",
+    aboutBio:
+      "I'm a Mid-Senior full-stack developer, working with React, Next.js, Node/NestJS, Ruby on Rails and Flutter on high-demand SaaS products. At Prolog App, I migrated a legacy system from PHP to React and built two features from scratch — a fleet-wide maintenance page and a file viewer — both in production with zero bugs recorded. I also work in an AI-first workflow today, using Claude Code, Gemini and Codex from spec writing to deploy, and I'm preparing for the next step: technical leadership.",
+    experienceHeading: "Experience",
+    skillsHeading: "Skills",
+    skillsFrontend: "Front-end",
+    skillsBackendMobile: "Back-end & Mobile",
+    skillsAiData: "AI & Data",
+    skillsQuality: "Quality & Process",
+    skillsCloud: "Cloud/DevOps",
+    contactEmail: "Email",
+    contactLinkedIn: "LinkedIn",
+    contactGitHub: "GitHub",
+    languageToggle: "Language",
+  },
+};
