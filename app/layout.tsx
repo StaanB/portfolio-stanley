@@ -47,7 +47,10 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${archivoBlack.variable} ${workSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#0A0908] font-body text-[#F2ECE3]">
+      <body
+        className="min-h-full flex flex-col bg-[#0A0908] font-body text-[#F2ECE3]"
+        suppressHydrationWarning
+      >
         <LocaleProvider initialLocale="pt">
           <AppShell>{children}</AppShell>
         </LocaleProvider>

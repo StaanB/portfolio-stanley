@@ -9,6 +9,7 @@ export const dictionaries = {
     yearLabel: "Ano",
     stackLabel: "Stack",
     linksLabel: "Links",
+    aboutTitle: "Sobre",
     aboutHeadline:
       "Desenvolvedor Pleno-Sênior full-stack (React, Next.js, Node, Flutter) com um fluxo de desenvolvimento AI-first — da spec ao deploy — e entregas com zero bugs em produção, incluindo migrações completas de stack.",
     aboutBio:
@@ -37,6 +38,7 @@ export const dictionaries = {
     yearLabel: "Year",
     stackLabel: "Stack",
     linksLabel: "Links",
+    aboutTitle: "About",
     aboutHeadline:
       "Mid-Senior full-stack Developer (React, Next.js, Node, Flutter) with an AI-first development workflow — from spec to deploy — and zero-bug deliveries in production, including complete stack migrations.",
     aboutBio:

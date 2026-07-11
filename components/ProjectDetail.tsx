@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "@/lib/i18n";
+import { TagList } from "@/components/TagList";
 import type { Project } from "@/content/projects";
 
 const SCREENSHOTS: Record<string, { src: string; width: number; height: number }> = {
@@ -69,15 +70,8 @@ export function ProjectDetail({
           </div>
           <div>
             <dt className="text-[#A89E92]">{t("stackLabel")}</dt>
-            <dd className="flex flex-wrap gap-2 pt-1">
-              {project.stack.map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full border border-[#2A241C] px-2 py-0.5 text-xs text-[#A89E92]"
-                >
-                  {tech}
-                </span>
-              ))}
+            <dd className="pt-1">
+              <TagList items={project.stack} />
             </dd>
           </div>
           {project.links && project.links.length > 0 && (

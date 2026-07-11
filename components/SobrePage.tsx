@@ -5,6 +5,7 @@ import { experience } from "@/content/experience";
 import { skillGroups } from "@/content/skills";
 import { ExperienceItem } from "@/components/ExperienceItem";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { TagList } from "@/components/TagList";
 
 export function SobrePage() {
   const { t } = useLocale();
@@ -18,10 +19,13 @@ export function SobrePage() {
   return (
     <div className="flex flex-col gap-16">
       <header className="flex flex-col gap-4">
-        <h1 className="font-display max-w-3xl text-4xl uppercase text-[#FF6B1A] sm:text-6xl">
-          {t("aboutHeadline")}
+        <h1 className="font-display text-2xl uppercase text-[#FF6B1A] sm:text-3xl">
+          {t("aboutTitle")}
         </h1>
-        <p className="max-w-2xl text-base leading-relaxed text-[#F2ECE3]">
+        <p className="max-w-2xl text-lg font-medium leading-snug text-[#F2ECE3]">
+          {t("aboutHeadline")}
+        </p>
+        <p className="max-w-2xl text-base leading-relaxed text-[#A89E92]">
           {t("aboutBio")}
         </p>
       </header>
@@ -68,16 +72,7 @@ export function SobrePage() {
                 <h3 className="text-sm uppercase text-[#FF6B1A]">
                   {t(group.labelKey)}
                 </h3>
-                <div className="flex flex-wrap gap-2">
-                  {group.items.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-[#2A241C] px-2 py-0.5 text-xs text-[#A89E92]"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
+                <TagList items={group.items} />
               </div>
             ))}
           </div>
