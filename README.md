@@ -2,7 +2,7 @@
 
 Site pessoal de portfólio, construído em público como o próprio case "AI-first" do projeto (ver seção 4.6 da spec).
 
-**Site:** ainda não publicado (fase 7 do roadmap).
+**Site:** [portfolio-stanley-delta.vercel.app](https://portfolio-stanley-delta.vercel.app)
 
 ## Stack
 

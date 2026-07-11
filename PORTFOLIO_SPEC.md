@@ -368,7 +368,7 @@ Decidido: o site terá os dois idiomas, com toggle manual (🌐 PT ↔ EN) — m
 | 4. Setup do projeto | ✅ Feito ([PR #1](https://github.com/StaanB/portfolio-stanley/pull/1)) — Next.js 16 (App Router) + TypeScript strict + Tailwind CSS 4, Vitest/Testing Library/jsdom, assets em `public/`, `README.md` do repositório. Deploy na Vercel fica pra fase 7 |
 | 5. Build das seções | ✅ Feito ([PR #2](https://github.com/StaanB/portfolio-stanley/pull/2)) — TDD (6.2): `content/*.ts` (status/projects/experience/dictionaries/skills, 33 testes) → componentes genéricos (`StatusBadge`, `ProjectCard`, `ExperienceItem`) → páginas (Home/lista, `/projetos/[slug]`, `/sobre`) + `AppShell` (nav de canto + rodapé fino) |
 | 6. Polish | ✅ Feito ([PR #3](https://github.com/StaanB/portfolio-stanley/pull/3)) — animações (Framer Motion: wipe entre rotas, cascata na Home, rotação "roleta" só desktop; GSAP ScrollTrigger em `/sobre`), SEO (OG image dinâmica, metadata por página, sitemap.xml, robots.txt), responsividade (mobile 375px sem overflow/sobreposição) e acessibilidade (contraste AA checado, h1 sr-only na Home, foco de teclado intacto) |
-| 7. Launch | ⏸️ **Aguardando confirmação do Stanley** (6.3: deploy é ação pública, ciclo autônomo para aqui) — domínio próprio (opcional), compartilhar no LinkedIn |
+| 7. Launch | ✅ Feito — no ar em [portfolio-stanley-delta.vercel.app](https://portfolio-stanley-delta.vercel.app), projeto Vercel conectado ao repo GitHub (deploy automático a cada push em `main`). Domínio próprio: não feito ainda (opcional). Compartilhar no LinkedIn: fica a critério do Stanley |
 | 8. Pós-launch | Atualizar README do GitHub (`StaanB/StaanB`) com link do portfólio e posicionamento novo — seção 10 |
 
 ---
