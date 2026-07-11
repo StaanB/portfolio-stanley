@@ -20,17 +20,20 @@ const item = {
 
 export function HomeList({ projects }: { projects: Project[] }) {
   return (
-    <motion.div
-      variants={container}
-      initial="hidden"
-      animate="show"
-      className="flex flex-col"
-    >
-      {projects.map((project, index) => (
-        <motion.div key={project.slug} variants={item}>
-          <ProjectCard project={project} index={index} />
-        </motion.div>
-      ))}
-    </motion.div>
+    <>
+      <h1 className="sr-only">Stanley Brenner — Projetos</h1>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="flex flex-col"
+      >
+        {projects.map((project, index) => (
+          <motion.div key={project.slug} variants={item}>
+            <ProjectCard project={project} index={index} />
+          </motion.div>
+        ))}
+      </motion.div>
+    </>
   );
 }
