@@ -5,9 +5,9 @@ import Link from "next/link";
 import { useLocale } from "@/lib/i18n";
 import type { Project } from "@/content/projects";
 
-const SCREENSHOT_SRC: Record<string, string> = {
-  animatch: "/images/animatch-home.png",
-  dpms: "/images/dpms-home.png",
+const SCREENSHOTS: Record<string, { src: string; width: number; height: number }> = {
+  animatch: { src: "/images/animatch-home.png", width: 1859, height: 867 },
+  dpms: { src: "/images/dpms-home.png", width: 927, height: 584 },
 };
 
 export function ProjectDetail({
@@ -19,8 +19,8 @@ export function ProjectDetail({
 }) {
   const { locale, t } = useLocale();
   const year = project.date.slice(0, 4);
-  const screenshotSrc = project.hasScreenshot
-    ? SCREENSHOT_SRC[project.slug]
+  const screenshot = project.hasScreenshot
+    ? SCREENSHOTS[project.slug]
     : undefined;
 
   return (
@@ -35,12 +35,12 @@ export function ProjectDetail({
         </p>
       </header>
 
-      {screenshotSrc && (
+      {screenshot && (
         <Image
-          src={screenshotSrc}
+          src={screenshot.src}
           alt={project.title}
-          width={1200}
-          height={750}
+          width={screenshot.width}
+          height={screenshot.height}
           className="w-full max-w-3xl rounded border border-[#2A241C]"
         />
       )}
