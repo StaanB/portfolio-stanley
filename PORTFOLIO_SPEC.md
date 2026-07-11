@@ -210,7 +210,7 @@ Pesquisado via LinkedIn e site público ([prologapp.com](https://prologapp.com/)
   - **Wordmark "STANLEY B."** — bloco/negrito, inspirado no estilo "VAN HOLTZ CO." (tipografia geométrica pesada, caixa alta), laranja `#FF6B1A` sobre preto `#0A0908`. Uso: elemento flutuante fixo no site (mesmo espírito do "VAN HOLTZ CO." fixo no canto do site de referência). Arquivo: `assets/logo-wordmark-stanley-b.png`.
   - **Favicon "SB"** — só as 2 iniciais, badge compacto, mesma paleta. Uso: ícone da aba do navegador. Arquivo: `assets/favicon-sb.png`.
   - Exportação original do Canva veio com fundo preto sólido (conta Free não permite PNG transparente) — você removeu o fundo manualmente e substituiu os dois arquivos em `assets/` pelas versões com fundo transparente. Prontos pra uso direto sobre qualquer seção do site.
-  - **Pendente de polish (menor):** ainda dá pra apertar um pouco o enquadramento (espaço vazio nas bordas) na hora de integrar como asset real do site (fase 6 — Polish, seção 8), mas não bloqueia nada.
+  - **✅ Polish feito:** enquadramento do favicon apertado (a marca "SB" ocupava só ~88x49px dentro de um canvas 500x500, ficando ilegível no tamanho de aba) — recortado com margem de 25% e reexportado em 256x256, tanto em `assets/favicon-sb.png` quanto em `app/icon.png`.
 
 ### 5.1 Tipografia ✅ Resolvido
 
