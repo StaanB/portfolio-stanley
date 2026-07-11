@@ -6,7 +6,7 @@ import type { Project } from "@/content/projects";
 
 const project: Project = {
   slug: "animatch",
-  title: "AniMatch",
+  title: { pt: "Título PT", en: "Title EN" },
   date: "2026-04-13",
   type: "personal",
   tagline: { pt: "Tagline PT", en: "Tagline EN" },
@@ -24,7 +24,7 @@ describe("ProjectCard", () => {
         <ProjectCard project={project} />
       </LocaleProvider>
     );
-    expect(screen.getByText("AniMatch")).toBeInTheDocument();
+    expect(screen.getByText("Título PT")).toBeInTheDocument();
     expect(screen.getByText("Tagline PT")).toBeInTheDocument();
     expect(screen.getByText("2026")).toBeInTheDocument();
     expect(screen.getByRole("link")).toHaveAttribute(
@@ -39,6 +39,7 @@ describe("ProjectCard", () => {
         <ProjectCard project={project} />
       </LocaleProvider>
     );
+    expect(screen.getByText("Title EN")).toBeInTheDocument();
     expect(screen.getByText("Tagline EN")).toBeInTheDocument();
   });
 });

@@ -29,7 +29,7 @@ export function ProjectDetail({
       <header className="flex flex-col gap-3">
         <span className="font-mono text-sm text-[#A89E92]">{year}</span>
         <h1 className="font-display text-5xl uppercase text-[#FF6B1A] sm:text-7xl">
-          {project.title}
+          {project.title[locale]}
         </h1>
         <p className="max-w-2xl text-lg text-[#F2ECE3]">
           {project.tagline[locale]}
@@ -39,7 +39,7 @@ export function ProjectDetail({
       {screenshot && (
         <Image
           src={screenshot.src}
-          alt={project.title}
+          alt={project.title[locale]}
           width={screenshot.width}
           height={screenshot.height}
           className="w-full max-w-3xl rounded border border-[#2A241C]"
@@ -103,7 +103,7 @@ export function ProjectDetail({
           {t("nextProject")}
         </span>
         <span className="font-display text-3xl uppercase text-[#F2ECE3] transition-colors group-hover:text-[#FF6B1A] sm:text-5xl">
-          {nextProject.title}
+          {nextProject.title[locale]}
         </span>
       </Link>
     </article>
