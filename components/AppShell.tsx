@@ -6,6 +6,7 @@ import { useLocale, detectInitialLocale } from "@/lib/i18n";
 import { careerStatus } from "@/content/status";
 import { StatusBadge } from "@/components/StatusBadge";
 import { PageTransition } from "@/components/PageTransition";
+import { FlagBR, FlagUS } from "@/components/FlagIcon";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const { locale, setLocale, t } = useLocale();
@@ -21,6 +22,21 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <>
+      <div
+        className="pointer-events-none fixed left-0 top-0 z-10 h-[180px] w-[260px] sm:h-[250px] sm:w-[400px]"
+        style={{
+          background:
+            "radial-gradient(ellipse at 0% 0%, rgba(10,9,8,0.94) 0%, rgba(10,9,8,0.8) 42%, rgba(10,9,8,0) 78%)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          maskImage:
+            "radial-gradient(ellipse at 0% 0%, #000 0%, #000 42%, transparent 78%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse at 0% 0%, #000 0%, #000 42%, transparent 78%)",
+        }}
+        aria-hidden
+      />
+
       <header className="fixed left-0 top-0 z-20 flex flex-col gap-3 p-6 sm:p-8">
         <Link
           href="/"
@@ -73,10 +89,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </div>
         <button
           onClick={() => setLocale(locale === "pt" ? "en" : "pt")}
-          className="uppercase transition-colors hover:text-[#FF6B1A]"
+          className="flex items-center gap-1.5 transition-opacity hover:opacity-80"
           aria-label={t("languageToggle")}
         >
-          {locale === "pt" ? "PT · EN" : "EN · PT"}
+          <FlagBR className={`h-3.5 w-3.5 ${locale === "pt" ? "" : "opacity-40"}`} />
+          <FlagUS className={`h-3.5 w-3.5 ${locale === "en" ? "" : "opacity-40"}`} />
         </button>
       </footer>
     </>
