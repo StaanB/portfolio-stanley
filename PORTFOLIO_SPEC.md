@@ -365,10 +365,10 @@ Decidido: o site terá os dois idiomas, com toggle manual (🌐 PT ↔ EN) — m
 | 1. Conteúdo | ✅ Feito — bio, projetos, skills, experiência, contato, todos os 6 cases (4.2–4.7) |
 | 2. Wireframe | ✅ Feito — protótipo interativo em `wireframes/00-prototipo-interativo.html`, testado em celular real, sincronizado no projeto "Portfólio Stanley Brenner" no Claude Design |
 | 3. Design system | ✅ Feito — paleta, logo (5) e tipografia (5.1: Archivo Black + Work Sans) todos fechados |
-| 4. Setup do projeto | Next.js + Tailwind + deploy inicial na Vercel + **`README.md` do repositório** (o que é o projeto, stack, como rodar local, link pro site quando existir — documentação padrão de projeto, não confundir com o README de perfil da seção 10) |
-| 5. Build das seções | **TDD (6.2)**: teste → componente → refatora, nessa ordem. Dados primeiro (`content/*.ts`, sort, status, i18n) → componentes genéricos (`ProjectCard`, `ExperienceItem`, status) → páginas (Home/lista → Projeto → Sobre) |
-| 6. Polish | Animações, SEO, OG image, responsividade, acessibilidade, testes Vitest |
-| 7. Launch | Domínio próprio (opcional), compartilhar no LinkedIn |
+| 4. Setup do projeto | ✅ Feito ([PR #1](https://github.com/StaanB/portfolio-stanley/pull/1)) — Next.js 16 (App Router) + TypeScript strict + Tailwind CSS 4, Vitest/Testing Library/jsdom, assets em `public/`, `README.md` do repositório. Deploy na Vercel fica pra fase 7 |
+| 5. Build das seções | ✅ Feito ([PR #2](https://github.com/StaanB/portfolio-stanley/pull/2)) — TDD (6.2): `content/*.ts` (status/projects/experience/dictionaries/skills, 33 testes) → componentes genéricos (`StatusBadge`, `ProjectCard`, `ExperienceItem`) → páginas (Home/lista, `/projetos/[slug]`, `/sobre`) + `AppShell` (nav de canto + rodapé fino) |
+| 6. Polish | ✅ Feito ([PR #3](https://github.com/StaanB/portfolio-stanley/pull/3)) — animações (Framer Motion: wipe entre rotas, cascata na Home, rotação "roleta" só desktop; GSAP ScrollTrigger em `/sobre`), SEO (OG image dinâmica, metadata por página, sitemap.xml, robots.txt), responsividade (mobile 375px sem overflow/sobreposição) e acessibilidade (contraste AA checado, h1 sr-only na Home, foco de teclado intacto) |
+| 7. Launch | ⏸️ **Aguardando confirmação do Stanley** (6.3: deploy é ação pública, ciclo autônomo para aqui) — domínio próprio (opcional), compartilhar no LinkedIn |
 | 8. Pós-launch | Atualizar README do GitHub (`StaanB/StaanB`) com link do portfólio e posicionamento novo — seção 10 |
 
 ---
