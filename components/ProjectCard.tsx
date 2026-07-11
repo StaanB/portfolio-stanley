@@ -2,8 +2,26 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { useLocale } from "@/lib/i18n";
 import type { Project } from "@/content/projects";
+
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState(() =>
+    typeof window !== "undefined"
+      ? window.matchMedia("(min-width: 761px)").matches
+      : false
+  );
+
+  useEffect(() => {
+    const query = window.matchMedia("(min-width: 761px)");
+    const listener = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    query.addEventListener("change", listener);
+    return () => query.removeEventListener("change", listener);
+  }, []);
+
+  return isDesktop;
+}
 
 export function ProjectCard({
   project,
@@ -13,8 +31,11 @@ export function ProjectCard({
   index?: number;
 }) {
   const { locale } = useLocale();
+  const isDesktop = useIsDesktop();
   const year = project.date.slice(0, 4);
-  const baseRotate = index % 2 === 0 ? -1.5 : 1.5;
+  // "Roleta" diagonal offset only applies on desktop — mobile has no
+  // hover to un-rotate it back to 0, so it would stay permanently tilted (7).
+  const baseRotate = isDesktop ? (index % 2 === 0 ? -1.5 : 1.5) : 0;
 
   return (
     <Link
@@ -23,7 +44,7 @@ export function ProjectCard({
     >
       <motion.div
         className="flex flex-col gap-1"
-        initial={{ rotate: baseRotate }}
+        animate={{ rotate: baseRotate }}
         whileHover={{ rotate: 0, x: 12 }}
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
       >
